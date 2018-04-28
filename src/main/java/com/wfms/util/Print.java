@@ -6,4 +6,11 @@ public class Print {
 		System.out.println(obj.toString());
 	}
 	
+	public static void printnb(Object obj) {
+		System.out.print(obj.toString());
+	}
+	
+	public static void print() {
+		System.out.println();
+	}
 }
