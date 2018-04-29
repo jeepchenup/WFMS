@@ -11,7 +11,7 @@ public class Pool<T> {
 
 	public Pool(Class<T> classObject, int size) {
 		this.size = size;
-		checkedOut = new boolean[size];
+		checkedOut = new boolean[size]; // init element is false
 		available = new Semaphore(size, true);
 		// Load pool with objects that can be checked out:
 		for (int i = 0; i < size; ++i)
@@ -23,6 +23,11 @@ public class Pool<T> {
 			}
 	}
 
+	/**
+	 * 获取对象锁
+	 * @return
+	 * @throws InterruptedException
+	 */
 	public T checkOut() throws InterruptedException {
 		available.acquire();
 		return getItem();
