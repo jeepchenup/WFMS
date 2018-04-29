@@ -1,4 +1,4 @@
-package com.wfms.thinkinginjava;
+package com.wfms.thinkinginjava.concurrency;
 
 import java.util.concurrent.*;
 import java.util.*;
