@@ -3,3 +3,6 @@ sleep与wait之间的异同？
 线程的基本状态以及状态之间的关系？
 什么是线程安全？
 线程池概念？
+ThreadLocal的作用？原理？应用时应该注意什么？应用场景？
+interrupt()、interrupted()、isInterrupted()三者之间的区别？
+volatile语义？
