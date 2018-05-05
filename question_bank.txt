@@ -6,3 +6,11 @@ sleep与wait之间的异同？
 ThreadLocal的作用？原理？应用时应该注意什么？应用场景？
 interrupt()、interrupted()、isInterrupted()三者之间的区别？
 volatile语义？
+描述一下JVM内存模型？
+字节码解释器如何与PC Register工作的？
+JVM的多线程是如何实现的？
+PC Register的值？
+stack Frame里面储存什么？局部变量表中存放什么？
+StackOverflowError与OutOfMemoryError之间的区别？
+内存泄漏和内存溢出之间的区别？
+String.intern()方法在JDK1.6和JDK1.7之间有何不同？
