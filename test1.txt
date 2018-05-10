@@ -1,2 +1,6 @@
 hello worldjjjjj
+<<<<<<< HEAD
 update by master branch
+=======
+update by test branch
+>>>>>>> branch 'master' of https://github.com/jeepchenup/WFMS.git
