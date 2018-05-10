@@ -14,3 +14,7 @@ stack Frame里面储存什么？局部变量表中存放什么？
 StackOverflowError与OutOfMemoryError之间的区别？
 内存泄漏和内存溢出之间的区别？
 String.intern()方法在JDK1.6和JDK1.7之间有何不同？
+List与Set之间的区别？
+HashSet是如何保证不重复的？
+HashMap是线程安全的吗？为什么HashMap是非线程安全的？（最好画图作答）
+HashMap扩容的过程？
