@@ -29,3 +29,4 @@ JVM 年轻代到年老代的晋升过程的判断条件是什么呢？
 四类八种，大小分别为多少？
 final、finally、finalize之间的区别？
 什么是反射？
+Interface继承自Object?
