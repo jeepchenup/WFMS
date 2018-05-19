@@ -30,3 +30,4 @@ JVM 年轻代到年老代的晋升过程的判断条件是什么呢？
 final、finally、finalize之间的区别？
 什么是反射？
 Interface继承自Object?
+类加载为什么要使用双亲委派模式，有没有什么场景是打破了这个模式？
