@@ -31,7 +31,7 @@ public class ShowQuestion {
 			reader.close();
 
 			int randomIdx = new Random().nextInt(questions.size());
-			System.out.println("Çë»Ø´ð£º");
+			System.out.println("è¯·å›žç­”ï¼š");
 			System.out.println(questions.get(randomIdx));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -45,6 +45,6 @@ public class ShowQuestion {
 	}
 
 	public static void main(String[] args) {
-		run("question_bank");
+		run("question_bank_utf8");
 	}
 }
