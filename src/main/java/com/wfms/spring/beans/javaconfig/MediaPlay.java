@@ -1,6 +1,6 @@
 package com.wfms.spring.beans.javaconfig;
 
-public interface CompactDisc {
+public interface MediaPlay {
 
 	void play(String from);
 }

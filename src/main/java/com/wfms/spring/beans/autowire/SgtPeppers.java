@@ -1,14 +1,16 @@
-package com.wfms.spring.beans.annotation;
+package com.wfms.spring.beans.autowire;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class SgtPeppers implements CompactDisc {
+public class SgtPeppers implements CompactDisc{
 	
-	private String title = "Sgt. Pepper's Lonely Hearts Club Band";  
+	private String title = "Sgt. Pepper's Lonely Hearts Club Band";
 	private String artist = "The Beatles";
-	public void paly() {
-		System.out.print("Playing " + title + " by " + artist);
+
+	@Override
+	public void play() {
+		System.out.println("Playing " + title + " by " + artist);
 	}
 
 }

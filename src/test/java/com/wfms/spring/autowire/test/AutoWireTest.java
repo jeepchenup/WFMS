@@ -1,32 +1,26 @@
-package com.wfms.spring.beans.annotation.test;
+package com.wfms.spring.autowire.test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.wfms.spring.beans.annotation.CDPlayerConfig;
-import com.wfms.spring.beans.annotation.CompactDisc;
-import com.wfms.spring.beans.annotation.MediaPlayer;
+import com.wfms.spring.beans.autowire.CDPlayerConfig;
+import com.wfms.spring.beans.autowire.CompactDisc;
+import com.wfms.spring.beans.autowire.MediaPlay;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=CDPlayerConfig.class)
-public class CDPlayerTest {
-	
-	@Rule
-	public final StandardOutputStreamLog log = new StandardOutputStreamLog();
-	
-	@Autowired
-	private MediaPlayer player;
-	
+public class AutoWireTest {
+
 	@Autowired
 	private CompactDisc cd;
+	
+	@Autowired
+	private MediaPlay mp;
 	
 	@Test
 	public void cdShouldNotBeNull() {
@@ -34,8 +28,7 @@ public class CDPlayerTest {
 	}
 	
 	@Test
-	public void play() {
-		player.play();
-		assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles", log.getLog());
+	public void invokeMediaPlay() {
+		mp.play();
 	}
 }

@@ -1,6 +1,6 @@
 package com.wfms.spring.beans.autowire;
 
-public interface CompactDisc {
+public interface MediaPlay {
 
 	void play();
 }
