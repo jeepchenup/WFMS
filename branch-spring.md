@@ -9,3 +9,4 @@ Window -> Preference -> General -> Workspace, Test file encoding to UTF-8.
 
 - Spring Tool Suite
 	- **Create bean.xml by tools : ** new -> spring -> Spring Bean Configuration file.
+	- How about Spring Tool Suite? It's provide a method to validate beans.xml. When you configure beans and show prompt related content automatically.
