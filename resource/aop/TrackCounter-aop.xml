@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<bean id="trackCounter" class="com.wfms.spring.aop.advice.xml.TrackCounter" />
+	
+	<bean id="actor"  class="com.wfms.spring.aop.advice.xml.Actor"/>
+
+	<bean id="blankDisc" class="com.wfms.spring.aop.advice.xml.BlankDisc">
+		<property name="title" value="Sgt. Pepper's Lonely Hearts Club Band" />
+		<property name="artist" value="The Beatles" />
+		<property name="tracks">
+			<list>
+				<value>Sgt. Pepper's Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+				<value>Luck in the sky wit Diamonds</value>
+			</list>
+		</property>
+	</bean>
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<aop:config>
+		<aop:aspect ref="trackCounter">
+			<aop:pointcut
+				expression="execution(** com.wfms.spring.aop.advice.xml.CompactDisc.playTrack(int)) and args(trackNumber)"
+				id="trackPlayed" />
+			<aop:before pointcut-ref="trackPlayed" method="countTrack" />
+		</aop:aspect>
+		
+		<aop:aspect>
+			<aop:declare-parents types-matching="com.wfms.spring.aop.advice.xml.Performance+" 
+											  implement-interface="com.wfms.spring.aop.advice.xml.Encoreable"
+											  default-impl="com.wfms.spring.aop.advice.xml.DefaultEncoreable"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
