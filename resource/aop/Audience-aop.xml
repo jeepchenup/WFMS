@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean class="com.wfms.spring.aop.advice.xml.JavaConfig"/>
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<!-- <aop:config>
+		<aop:aspect ref="audience">
+			<aop:before pointcut="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))"  method="silenceCellPhones"/>
+			<aop:before pointcut="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))"  method="takeSeats"/>
+			<aop:after-returning pointcut="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))"  method="applause"/>
+			<aop:after-throwing pointcut="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))" method="demandRefund"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+	<!-- <aop:config>
+		<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))"  id="performance"/>
+			<aop:before pointcut-ref="performance"  method="silenceCellPhones"/>
+			<aop:before pointcut-ref="performance"  method="takeSeats"/>
+			<aop:after-returning pointcut-ref="performance"  method="applause"/>
+			<aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+	<aop:config>
+		<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(** com.wfms.spring.aop.advice.xml.Actor.perform(..))" id="performance"/>
+			<aop:around pointcut-ref="performance" method="watchPerformance"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

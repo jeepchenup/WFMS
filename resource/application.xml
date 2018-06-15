@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="compactDisc" class="com.wfms.spring.beans.xml.SgtPeppers" />
+	
+	<!-- use <constructor-arg> to DI beans -->
+	<bean id="cdPlayer" class="com.wfms.spring.beans.xml.CDPlayer">
+		<constructor-arg ref="compactDisc" />
+	</bean>
+	
+	<!-- use 'c:cd-ref' to DI beans -->
+	<bean id="cdPlayer2" class="com.wfms.spring.beans.xml.CDPlayer"  c:cd-ref="compactDisc" />
+	
+	<!-- use <constructor-arg> to DI args -->
+	<bean id="blankDisc" class="com.wfms.spring.beans.xml.BlankDisc">
+		<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+		<constructor-arg value="The Beatles1" />
+	</bean>
+	
+	<bean id="blankDisc2" class="com.wfms.spring.beans.xml.BlankDisc" 
+			   c:artist="Sgt. Pepper's Lonely Hearts Club Band" 
+			   c:title="The Beatles2"/>
+			   
+	<bean id="blankDisc3" class="com.wfms.spring.beans.xml.BlankDisc" 
+			   c:_0="Sgt. Pepper's Lonely Hearts Club Band"
+			   c:_1="The Beatles3"/>
+			   
+</beans>
