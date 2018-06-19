@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="school" class="com.wfms.spring.selftest.School">
+		<property name="schoolName" value="浙江财经大学"/>
+		<property name="address" value="下沙"/>
+		<property name="studentNumber" value="1001"/>
+	</bean>
+</beans>
