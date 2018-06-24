@@ -29,6 +29,7 @@ public class FactoryBeanTest {
 		String locationPath = "classpath:/spring/selftest/factorybean-bean.xml";
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(locationPath);
 		Tool tool = context.getBean("tool", Tool.class);
+		ToolFactory toolFactory = context.getBean("&tool", ToolFactory.class);
 		
 		assertNotNull(tool);
 		assertEquals(1, tool.getId());
